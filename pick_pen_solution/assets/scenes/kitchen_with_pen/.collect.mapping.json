@@ -1,0 +1,269 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/accessories/light_switches/white_wide_switch/texture/image0.png",
+            "source_hash": "c12627223a6fd42c4c9715272f2407217dd2871e",
+            "target_url": "./assets/fixtures/accessories/light_switches/white_wide_switch/texture/image0.png",
+            "target_hash": "95a0d21d4db2b7403d4341059f0dcb0db0de1464"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/accessories/light_switches/white_wide_switch/texture/material_0.png",
+            "source_hash": "c12627223a6fd42c4c9715272f2407217dd2871e",
+            "target_url": "./assets/fixtures/accessories/light_switches/white_wide_switch/texture/material_0.png",
+            "target_hash": "ea221a9e583b2b6912098b4d72ff70adb40219df"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/accessories/outlets/simple_white/texture/material_0.png",
+            "source_hash": "0a1f422cebe2a200af23d390e76ae56ffa3fdee0",
+            "target_url": "./assets/fixtures/accessories/outlets/simple_white/texture/material_0.png",
+            "target_hash": "519843797f500cb2daebf9066995b97fe459d317"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/coffee_machines/nespresso/texture/image0.png",
+            "source_hash": "751ee58267a606854169717771d1257b08098560",
+            "target_url": "./assets/fixtures/coffee_machines/nespresso/texture/image0.png",
+            "target_hash": "03e94d87843700af994d4b8ac01de4746adf56f4"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/coffee_machines/nespresso/texture/material_0.png",
+            "source_hash": "751ee58267a606854169717771d1257b08098560",
+            "target_url": "./assets/fixtures/coffee_machines/nespresso/texture/material_0.png",
+            "target_hash": "4dc06c4af030a27c72b0a86351044a78d5b9d7b1"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/dishwashers/pack_2/texture/image0.png",
+            "source_hash": "02cbe2d525dc2974d183a32863a887b9fdd6b873",
+            "target_url": "./assets/fixtures/dishwashers/pack_2/texture/image0.png",
+            "target_hash": "7708f1a41652add4b7eecab49b9dfb6e4ee6ee65"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/dishwashers/pack_2/texture/image23.png",
+            "source_hash": "b5e1acc135ab2b365d60a14d839915796b1f5e75",
+            "target_url": "./assets/fixtures/dishwashers/pack_2/texture/image23.png",
+            "target_hash": "1f898880ad201984e20e3d79d943e7902a6eb630"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/dishwashers/pack_2/texture/material_0.png",
+            "source_hash": "02cbe2d525dc2974d183a32863a887b9fdd6b873",
+            "target_url": "./assets/fixtures/dishwashers/pack_2/texture/material_0.png",
+            "target_hash": "d0331662d7fa0ee7c867706562aa568e6bd74e0d"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/fridges/pack_2/texture/image27.png",
+            "source_hash": "a6b2d99f34ed583b4f167b9db40b1ffc580cc4b1",
+            "target_url": "./assets/fixtures/fridges/pack_2/texture/image27.png",
+            "target_hash": "7ef0478845497c6a31cfc8614716c20c5acc38e1"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/fridges/pack_2/texture/image30.png",
+            "source_hash": "5c3893b2a22d17a470033f76f06b1fb8276a2854",
+            "target_url": "./assets/fixtures/fridges/pack_2/texture/image30.png",
+            "target_hash": "24b6488c23ded7618ab0f515f60d6b87ab72171a"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/fridges/pack_2/texture/material_0.png",
+            "source_hash": "a6b2d99f34ed583b4f167b9db40b1ffc580cc4b1",
+            "target_url": "./assets/fixtures/fridges/pack_2/texture/material_0.png",
+            "target_hash": "f5b368a58137b9d5211fc9059c64664795490941"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/microwaves/gray/texture/image0.png",
+            "source_hash": "ceb778c166e31fb77d329a069f630167ee94678b",
+            "target_url": "./assets/fixtures/microwaves/gray/texture/image0.png",
+            "target_hash": "21d66c37a69d050ba76717f9ac8c5d62010143a6"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/microwaves/gray/texture/material_0.png",
+            "source_hash": "ceb778c166e31fb77d329a069f630167ee94678b",
+            "target_url": "./assets/fixtures/microwaves/gray/texture/material_0.png",
+            "target_hash": "3c067623fae665f545b88e09adc8fe8d1ba3e018"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/sinks/concrete_sink/texture/image0.png",
+            "source_hash": "a3b7d4a106b90bd89bb92c0e9483fa3e5ee16f8e",
+            "target_url": "./assets/fixtures/sinks/concrete_sink/texture/image0.png",
+            "target_hash": "5faa027145cd9a7a49b387239f34cbec5d344875"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/sinks/concrete_sink/texture/material_0.png",
+            "source_hash": "3379abb77260d72e161b885c0635dcfb202f61c6",
+            "target_url": "./assets/fixtures/sinks/concrete_sink/texture/material_0.png",
+            "target_hash": "087a3e8d54ad12f25ee7f1415fccd1955d72c8be"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/stoves/square_gas/texture/image0.png",
+            "source_hash": "4b8448c664865270f4ee9168456546d13d17d8ce",
+            "target_url": "./assets/fixtures/stoves/square_gas/texture/image0.png",
+            "target_hash": "3c1379f06fa2ca67cf499c027738eb8133844e7d"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/stoves/square_gas/texture/image4.png",
+            "source_hash": "ff28b65cc62ead9a5da393175a53b8971b02cd04",
+            "target_url": "./assets/fixtures/stoves/square_gas/texture/image4.png",
+            "target_hash": "ca3f95933d084794cb2d00e10fb516f0c3c74d4f"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/stoves/square_gas/texture/material_0.png",
+            "source_hash": "4b8448c664865270f4ee9168456546d13d17d8ce",
+            "target_url": "./assets/fixtures/stoves/square_gas/texture/material_0.png",
+            "target_hash": "62a3b210e496af55f8c2b0bf6ebc3ab5e8462273"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/toasters/basic_popup_2/texture/image0.png",
+            "source_hash": "e8dc24a03893e1896e87019ec22679c5ffaadbee",
+            "target_url": "./assets/fixtures/toasters/basic_popup_2/texture/image0.png",
+            "target_hash": "dd2a1919dd7f00dadab045fdbc2f691d28351783"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/toasters/basic_popup_2/texture/image3.png",
+            "source_hash": "6148a764e7e2fa1e0f1e0ab5885cbaecdbe59998",
+            "target_url": "./assets/fixtures/toasters/basic_popup_2/texture/image3.png",
+            "target_hash": "529cff8fdb88b7b69f42ad8a1e149403dd712d04"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/fixtures/toasters/basic_popup_2/texture/material_0.png",
+            "source_hash": "e8dc24a03893e1896e87019ec22679c5ffaadbee",
+            "target_url": "./assets/fixtures/toasters/basic_popup_2/texture/material_0.png",
+            "target_hash": "8d28b38f190dd71e730ff89c6503e7b7bdf18f2b"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/objects/objaverse/broccoli/broccoli_0/texture/image0.png",
+            "source_hash": "d96a29a9dca22d4315fbd4f32934c6341d4e0a1e",
+            "target_url": "./assets/objects/objaverse/broccoli/broccoli_0/texture/image0.png",
+            "target_hash": "53cf691849d4d3186018917276f025959821cf3f"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/objects/objaverse/plate/plate_7/texture/image0.png",
+            "source_hash": "a3f08fb526a9e902240fbf403cfb2a51191a2edd",
+            "target_url": "./assets/objects/objaverse/plate/plate_7/texture/image0.png",
+            "target_hash": "c6ecb7eb1f4f59abf10179a77e180d62ef5ce795"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/Poliigon_WoodVeneerOak_7760_BaseColor.png",
+            "source_hash": "f57cb075aee9c1dc86aa06e45c90de945851cdcf",
+            "target_url": "./assets/textures/Poliigon_WoodVeneerOak_7760_BaseColor.png",
+            "target_hash": "9f702847ce1fcc90a0ce2484ec5d477cc3b6f241"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/Poliigon_WoodVeneerOak_7760_Normal.png",
+            "source_hash": "ce56df2aa72706743604971038fe4e11595cc40f",
+            "target_url": "./assets/textures/Poliigon_WoodVeneerOak_7760_Normal.png",
+            "target_hash": "cf3a0706060d0ece0b7f3fee65f644b2c655d167"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/Poliigon_WoodVeneerOak_7760_Roughness.png",
+            "source_hash": "b9309e815b1ca702395aa8e14380a4281b68cbd3",
+            "target_url": "./assets/textures/Poliigon_WoodVeneerOak_7760_Roughness.png",
+            "target_hash": "6f97f65f880627f88c7de63415d856d970e37a4a"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/flat/light_gray.png",
+            "source_hash": "dfd13d90bb7fa25c0b9c99f8bf4946c5654e1464",
+            "target_url": "./assets/textures/flat/light_gray.png",
+            "target_hash": "c7003912f704d410d71af1524e077e6cf5375e7b"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/flat/light_green.png",
+            "source_hash": "5315341262e3731c3616ef898b1d53cdc3875ad1",
+            "target_url": "./assets/textures/flat/light_green.png",
+            "target_hash": "b57ff5df351215020078cffb2b0cdac4775c354a"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/wood/greenheart_wood_grain.png",
+            "source_hash": "2fcd4a3458ed252db34447303761b37e6cb4cc5c",
+            "target_url": "./assets/textures/wood/greenheart_wood_grain.png",
+            "target_hash": "3733c15b4346c9430a6d003d188f4162e50a9103"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/wood/wood_planks_3.png",
+            "source_hash": "823d6cb2ee7685f856928107daa5088d42d9369e",
+            "target_url": "./assets/textures/wood/wood_planks_3.png",
+            "target_hash": "80f53b2fc33b44981cc3163d82d5653e160b93fc"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/assets/textures/wood/wood_planks_wall.png",
+            "source_hash": "e837191a47cccd8461a739614ceaf70918070548",
+            "target_url": "./assets/textures/wood/wood_planks_wall.png",
+            "target_hash": "4a8ea0f37bceddab7e185f8ee04de2433cfaee74"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Orange002/texture/T_Orange002_BC001.png",
+            "source_hash": "ff3607e4f6e6ff93e5e749e71e56040807a2aa10",
+            "target_url": "./objects/Orange002/texture/T_Orange002_BC001.png",
+            "target_hash": "9987f62a2e919a00fb0d4004ff55a85d6415f5d9"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Orange002/texture/T_Orange002_ORM001.png",
+            "source_hash": "4c370b68bcea49e4f789ee0c0b9acb8efe975288",
+            "target_url": "./objects/Orange002/texture/T_Orange002_ORM001.png",
+            "target_hash": "18540933a83209ee9c9cd454e220afc300cacfd7"
+        },
+        {
+            "source_url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_Chrome_H.png",
+            "source_hash": "de10031f0a324087ce340bad4f6c18a2a961fb6a",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_Chrome_H.png",
+            "target_hash": "b54f18ffb478ed3cccac6b7806610d977c357f13"
+        },
+        {
+            "source_url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_Chrome_N.png",
+            "source_hash": "2464dcf2da1c8b56740363f8a138955981259456",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_Chrome_N.png",
+            "target_hash": "583d8b3ecbfd71f3ce3a4f3bb91af0685880d15b"
+        },
+        {
+            "source_url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_DrawTool_color.tga",
+            "source_hash": "1d7daae93ad20fe31b944eef3df984c28ea86fa7",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_DrawTool_color.tga",
+            "target_hash": "671d30c5046bd5cb1a95bd404253801e833eaec8"
+        },
+        {
+            "source_url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_DrawTool_n.tga",
+            "source_hash": "88c051307079b7fa45e18aec27caccdd87cd445c",
+            "target_url": "./omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Residential/Misc/Supplies/textures/MechanicalPencil_DrawTool_n.tga",
+            "target_hash": "671d30c5046bd5cb1a95bd404253801e833eaec8"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Plate/texture/T_Plate_BC001.png",
+            "source_hash": "146d0079cd06531c312e5ac64d07c6daef842cb7",
+            "target_url": "./objects/Plate/texture/T_Plate_BC001.png",
+            "target_hash": "6ebccb5b87126b9278aa077607b380a5ed9593be"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Plate/texture/T_Plate_N001.png",
+            "source_hash": "6ead0953b833732a274ab82395ecbd3facef1844",
+            "target_url": "./objects/Plate/texture/T_Plate_N001.png",
+            "target_hash": "de89016e473646588b701816d0c0c598d064b56a"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Plate/texture/T_Plate_ORM001.png",
+            "source_hash": "77575fa3b3282b8f399143586e82313ed7417095",
+            "target_url": "./objects/Plate/texture/T_Plate_ORM001.png",
+            "target_hash": "892bcf963ab9b490d6737c1f33fcbac0ea92f9db"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Orange003/texture/T_Orange003_BC001.png",
+            "source_hash": "1424a535a878a9add91797efed9911cd28a622f3",
+            "target_url": "./objects/Orange003/texture/T_Orange003_BC001.png",
+            "target_hash": "667c9232a99729e513c7f4852ae6cb0d8cb972b4"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Orange003/texture/T_Orange003_ORM001.png",
+            "source_hash": "b17a63149bd9b73189f8fbefaca2dc2ccc638211",
+            "target_url": "./objects/Orange003/texture/T_Orange003_ORM001.png",
+            "target_hash": "ad0e1c811fe7916899e4e4299679dc8cd5cfc2be"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Orange001/texture/T_Orange001_BC001.png",
+            "source_hash": "5b02c4894ac0b0f3dd3e29334686629667ae683e",
+            "target_url": "./objects/Orange001/texture/T_Orange001_BC001.png",
+            "target_hash": "cd7c8fb5e14701e8882b1f99dd383a42dd3df21b"
+        },
+        {
+            "source_url": "/workspace/kitchen_with_orange/objects/Orange001/texture/T_Orange001_ORM001.png",
+            "source_hash": "7fe6c4608366a9304521075532c1e78da3d37748",
+            "target_url": "./objects/Orange001/texture/T_Orange001_ORM001.png",
+            "target_hash": "77573873e1d75f28828a1c19052ef465946fde10"
+        }
+    ]
+}

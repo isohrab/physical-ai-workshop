@@ -197,6 +197,7 @@ if [ -d "$WORKDIR/IsaacLab/.git" ]; then
 else
   git clone "$ISAACLAB_REPO" IsaacLab
 fi
+
 cd "$WORKDIR/IsaacLab"
 git fetch --tags
 git checkout "$ISAACLAB_VERSION_TAG"
@@ -213,6 +214,9 @@ if [ -d "$WORKDIR/leisaac/.git" ]; then
 else
   git clone "$LEISAAC_REPO" leisaac
 fi
+cd "$WORKDIR/leisaac"
+git fetch origin  # make sure the commit is present
+git checkout 135a71dbe0460a008b691338ebdf4b871517aa9b
 
 log "Installing leisaac extras…"
 cd "$WORKDIR/leisaac"

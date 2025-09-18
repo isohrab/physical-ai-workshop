@@ -72,6 +72,15 @@ echo 'export LD_LIBRARY_PATH="$CUDA_HOME/lib64:${LD_LIBRARY_PATH}"' >> ~/.bashrc
 source ~/.bashrc
 
 
+### --- 0) GNOME Mutter timeout to 120s --- ###
+if command -v gsettings >/dev/null 2>&1; then
+  log "Setting GNOME Mutter check-alive-timeout to 120000 ms…"
+  gsettings set org.gnome.mutter check-alive-timeout 120000 || \
+    warn "Failed to set GNOME setting (headless or schema missing)."
+else
+  warn "gsettings not found; skipping GNOME tweak."
+fi
+
 # Set the installation directory specifically for the ubuntu user
 MINICONDA_DIR="/home/ubuntu/miniconda3"
 
@@ -229,14 +238,6 @@ python -m pip install -e "source/leisaac[lerobot-async]"
 # aws s3 sync s3://lightwheel-assets/path "$WORKDIR/leisaac/assets"
 warn "Asset download not configured. Add your command to fetch Lightwheel assets."
 
-### --- 8) GNOME Mutter timeout to 120s --- ###
-if command -v gsettings >/dev/null 2>&1; then
-  log "Setting GNOME Mutter check-alive-timeout to 120000 ms…"
-  gsettings set org.gnome.mutter check-alive-timeout 120000 || \
-    warn "Failed to set GNOME setting (headless or schema missing)."
-else
-  warn "gsettings not found; skipping GNOME tweak."
-fi
 
 ### --- 9) Clone workshop repository --- ###
 log "Cloning workshop repository…"

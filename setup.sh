@@ -130,10 +130,13 @@ python -m pip install -U pip setuptools wheel
 python -m pip install -U "huggingface_hub[cli]" awscli
 
 ### --- Hugging Face login (optional) --- ###
+# NOTE: huggingface_hub >=1.0 dropped the `huggingface-cli` command entirely in
+# favor of `hf` (confirmed on huggingface_hub 1.31.0, Sept 2026). `pip install -U`
+# above always grabs the latest release, so use the current `hf` CLI here.
 if [ -n "${HF_TOKEN:-}" ]; then
   log "Logging in to Hugging Face with HF_TOKEN…"
-  huggingface-cli login --token "$HF_TOKEN" --add-to-git-credential >/dev/null || \
-    warn "huggingface-cli login failed; proceeding unauthenticated."
+  hf auth login --token "$HF_TOKEN" --add-to-git-credential >/dev/null || \
+    warn "hf auth login failed; proceeding unauthenticated."
 else
   warn "HF_TOKEN not set. If the dataset is gated, export HF_TOKEN first."
 fi
@@ -141,10 +144,7 @@ fi
 ### --- 1) Download dataset --- ###
 log "Downloading dataset $HF_DATASET_REPO → $DATASET_DIR…"
 mkdir -p "$DATASET_DIR"
-huggingface-cli download \
-  --repo-type dataset "$HF_DATASET_REPO" \
-  --local-dir "$DATASET_DIR" \
-  --local-dir-use-symlinks False
+hf download --repo-type dataset "$HF_DATASET_REPO" --local-dir "$DATASET_DIR"
 
 
 ### --- 3 & 4) gr00t env + install --- ###
@@ -211,9 +211,27 @@ cd "$WORKDIR/IsaacLab"
 git fetch --tags
 git checkout "$ISAACLAB_VERSION_TAG"
 
+### --- Work around flatdict/pkg_resources build failure --- ###
+# isaaclab==0.41.3 depends on flatdict==4.0.1, whose legacy setup.py does
+# `import pkg_resources` at build time. Current setuptools (83.0.0, confirmed live
+# Sept 2026) has dropped pkg_resources entirely, so building flatdict's sdist fails
+# with "ModuleNotFoundError: No module named 'pkg_resources'" - and isaaclab.sh's own
+# installer does NOT propagate that failure (it prints an ERROR but keeps going), so
+# `isaaclab` silently never gets installed even though setup.sh reports success.
+# Fix: temporarily downgrade setuptools (still bundles pkg_resources) just long enough
+# to build flatdict once with --no-build-isolation, so isaaclab.sh's later resolver
+# finds it "already satisfied" and never needs to build it itself.
+log "Pre-installing flatdict (works around a pkg_resources removal in newer setuptools)…"
+python -m pip install "setuptools==70.3.0"
+python -m pip install --no-build-isolation "flatdict==4.0.1"
+
 log "Running IsaacLab installer…"
 chmod +x ./isaaclab.sh
 ./isaaclab.sh --install
+
+if ! python -c "import isaaclab" 2>/dev/null; then
+  die "isaaclab failed to install (import isaaclab still fails after ./isaaclab.sh --install). Check the log above for the real error - isaaclab.sh does not always propagate sub-install failures as a nonzero exit."
+fi
 
 ### --- 5,6) leisaac repo + installs --- ###
 log "Cloning leisaac…"
@@ -233,10 +251,27 @@ python -m pip install -e "source/leisaac"
 python -m pip install -e "source/leisaac[gr00t]"
 python -m pip install -e "source/leisaac[lerobot-async]"
 
-### --- 7) Download Lightwheel assets (placeholder) --- ###
-# Example (adjust as needed):
-# aws s3 sync s3://lightwheel-assets/path "$WORKDIR/leisaac/assets"
-warn "Asset download not configured. Add your command to fetch Lightwheel assets."
+### --- 7) Download Lightwheel assets --- ###
+log "Downloading Lightwheel base assets (so101_follower robot + kitchen_with_orange scene)…"
+LEISAAC_RELEASE_BASE="https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0"
+LEISAAC_ASSETS_DIR="$WORKDIR/leisaac/assets"
+mkdir -p "$LEISAAC_ASSETS_DIR/robots" "$LEISAAC_ASSETS_DIR/scenes"
+
+if [ -f "$LEISAAC_ASSETS_DIR/robots/so101_follower.usd" ]; then
+  log "so101_follower.usd already present."
+else
+  curl -fL --retry 3 -o "$LEISAAC_ASSETS_DIR/robots/so101_follower.usd" \
+    "$LEISAAC_RELEASE_BASE/so101_follower.usd"
+fi
+
+if [ -d "$LEISAAC_ASSETS_DIR/scenes/kitchen_with_orange" ]; then
+  log "kitchen_with_orange scene already present."
+else
+  TMP_ZIP="$(mktemp -d)/kitchen_with_orange.zip"
+  curl -fL --retry 3 -o "$TMP_ZIP" "$LEISAAC_RELEASE_BASE/kitchen_with_orange.zip"
+  unzip -q "$TMP_ZIP" -d "$LEISAAC_ASSETS_DIR/scenes"
+  rm -f "$TMP_ZIP"
+fi
 
 
 ### --- 9) Clone workshop repository --- ###
@@ -259,6 +294,42 @@ if [ -d "$PICK_PEN_SOURCE" ]; then
   log "pick_pen task copied successfully to $PICK_PEN_DEST/pick_pen"
 else
   warn "pick_pen task source directory not found at $PICK_PEN_SOURCE"
+fi
+
+### --- 10b) Register the kitchen_with_pen scene with leisaac --- ###
+# pick_pen_env_cfg.py imports KITCHEN_WITH_PEN_CFG/KITCHEN_WITH_PEN_USD_PATH from
+# leisaac.assets.scenes.kitchen, but upstream leisaac only ships the orange/hamburger
+# scenes. Append the pen scene definition, and copy the scene.usd + assets themselves
+# from the workshop repo's solution folder into leisaac's ASSETS_ROOT.
+log "Registering kitchen_with_pen scene with leisaac…"
+LEISAAC_KITCHEN_PY="$WORKDIR/leisaac/source/leisaac/leisaac/assets/scenes/kitchen.py"
+KITCHEN_WITH_PEN_SOURCE="$WORKDIR/physical-ai-workshop/pick_pen_solution/assets/scenes/kitchen_with_pen"
+KITCHEN_WITH_PEN_DEST="$WORKDIR/leisaac/assets/scenes/kitchen_with_pen"
+
+if [ -f "$LEISAAC_KITCHEN_PY" ] && ! grep -q "KITCHEN_WITH_PEN_CFG" "$LEISAAC_KITCHEN_PY"; then
+  cat >> "$LEISAAC_KITCHEN_PY" <<'EOF'
+
+KITCHEN_WITH_PEN_USD_PATH = str(SCENES_ROOT / "kitchen_with_pen" / "scene.usd")
+
+KITCHEN_WITH_PEN_CFG = AssetBaseCfg(
+    spawn=sim_utils.UsdFileCfg(
+        usd_path=KITCHEN_WITH_PEN_USD_PATH,
+    )
+)
+EOF
+  log "Appended KITCHEN_WITH_PEN_CFG to $LEISAAC_KITCHEN_PY"
+else
+  log "leisaac kitchen.py already has KITCHEN_WITH_PEN_CFG (or not found yet)."
+fi
+
+if [ -d "$KITCHEN_WITH_PEN_DEST" ]; then
+  log "kitchen_with_pen scene assets already present."
+elif [ -d "$KITCHEN_WITH_PEN_SOURCE" ]; then
+  mkdir -p "$(dirname "$KITCHEN_WITH_PEN_DEST")"
+  cp -r "$KITCHEN_WITH_PEN_SOURCE" "$KITCHEN_WITH_PEN_DEST"
+  log "kitchen_with_pen scene assets copied to $KITCHEN_WITH_PEN_DEST"
+else
+  warn "kitchen_with_pen source not found at $KITCHEN_WITH_PEN_SOURCE"
 fi
 
 ### --- 11) Install Jupyter and register kernels --- ###

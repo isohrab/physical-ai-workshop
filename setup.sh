@@ -283,9 +283,12 @@ else
   git clone https://github.com/isohrab/physical-ai-workshop.git physical-ai-workshop
 fi
 
-### --- 10) Copy pick_pen task to leisaac --- ###
+### --- 10) Copy pick_pen task to leisaac (bonus task) --- ###
+# The notebooks use leisaac's own LeIsaac-SO101-PickOrange-v0 task, for which a
+# fine-tuned GR00T N1.5 policy is published. pick_pen is installed as a bonus /
+# reference task: the scene and task code work, but there is no trained policy for it.
 log "Copying pick_pen task to leisaac tasks directory…"
-PICK_PEN_SOURCE="$WORKDIR/physical-ai-workshop/pick_pen/tasks/pick_pen"
+PICK_PEN_SOURCE="$WORKDIR/physical-ai-workshop/task_simulation/pick_pen_solution/tasks/pick_pen"
 PICK_PEN_DEST="$WORKDIR/leisaac/source/leisaac/leisaac/tasks"
 
 if [ -d "$PICK_PEN_SOURCE" ]; then
@@ -303,7 +306,7 @@ fi
 # from the workshop repo's solution folder into leisaac's ASSETS_ROOT.
 log "Registering kitchen_with_pen scene with leisaac…"
 LEISAAC_KITCHEN_PY="$WORKDIR/leisaac/source/leisaac/leisaac/assets/scenes/kitchen.py"
-KITCHEN_WITH_PEN_SOURCE="$WORKDIR/physical-ai-workshop/pick_pen_solution/assets/scenes/kitchen_with_pen"
+KITCHEN_WITH_PEN_SOURCE="$WORKDIR/physical-ai-workshop/task_simulation/pick_pen_solution/assets/scenes/kitchen_with_pen"
 KITCHEN_WITH_PEN_DEST="$WORKDIR/leisaac/assets/scenes/kitchen_with_pen"
 
 if [ -f "$LEISAAC_KITCHEN_PY" ] && ! grep -q "KITCHEN_WITH_PEN_CFG" "$LEISAAC_KITCHEN_PY"; then

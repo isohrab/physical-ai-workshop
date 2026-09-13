@@ -24,21 +24,34 @@ chmod +x setup.sh
 
 ## Workshop Overview
 
-This workshop teaches you to work with robot foundation models through practical, hands-on experience. You'll learn to load and process robot demonstration datasets, fine-tune the Isaac GR00T N1.5 foundation model for new robotic embodiments, create custom simulation scenes in Isaac Sim, and build complete robotics tasks from scratch including pick-and-place scenarios.
+This workshop teaches you to work with robot foundation models through practical, hands-on
+experience. It has two tracks:
 
-The curriculum progresses from basic dataset handling and model inference to advanced topics like custom task creation, scene design, and policy evaluation. By the end, you'll have practical experience with the complete pipeline from data preparation through model deployment, using industry-standard tools like Isaac Sim for simulation, GR00T for robot reasoning, and LeRobot data formats for training modern robotic systems.
+- **Simulation** ([`task_simulation/`](task_simulation/)) — meet Isaac Sim, understand how a
+  manipulation scene and task are defined, then run a fine-tuned **GR00T N1.5** policy on a
+  simulated SO-101 arm and watch it attempt a pick-and-place task.
+- **Real robot** ([`task_robot/`](task_robot/)) — walk the LeRobot pipeline end to end (record
+  demonstrations → dataset → fine-tune **SmolVLA** → run the policy), then drive a real SO-101 arm
+  with a trained policy.
+
+Between them you'll see the same idea on two embodiments: a vision-language-action model, given
+camera images and a plain-English instruction, producing joint targets — and the tooling
+(Isaac Sim, Isaac Lab, LeRobot dataset formats, GR00T, SmolVLA) that makes that practical.
 
 ## Workshop Structure
 
-The workshop is organized into sequential modules:
+**Simulation track** — [`task_simulation/notebooks/`](task_simulation/notebooks/), in order:
 
-- **Module 0**: Isaac Sim basics
-- **Module 1**: Loading and working with robot datasets
-- **Module 2**: Understanding model fine-tuning processes
-- **Module 3**: Creating custom simulation scenes
-- **Module 4**: Building robotics tasks from scratch
-- **Module 5**: Running model inference and evaluation
-- **Module 6**: Challenge exercises and extensions
+| Notebook | What it covers | Hands-on? |
+| --- | --- | --- |
+| `01_isaac_sim.ipynb` | Isaac Sim basics: build a tiny scene, try NVIDIA's pre-trained policies | ✅ yes |
+| `02_sim_scene.ipynb` | The `kitchen_with_orange` scene — how static geometry becomes physics objects | 📖 reading |
+| `03_sim_task.ipynb` | The `PickOrange` task — success conditions, observations, domain randomization | 📖 reading |
+| `04_inference.ipynb` | **Run the fine-tuned GR00T N1.5 policy in the simulator and evaluate it** | ✅ yes |
+| `05_challenges.ipynb` | Teleoperation, RL rewards, gripper physics — pick one and explore | ✅ yes |
+
+**Real robot track** — [`task_robot/`](task_robot/): `01_lerobot_pipeline.ipynb`, then
+`02_challenge.ipynb`.
 
 ## Run the notebooks
 
